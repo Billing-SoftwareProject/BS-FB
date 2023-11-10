@@ -1,0 +1,273 @@
+/* PaymentsPage.css */
+
+/* Basic styles for the invoice container */
+.invoice {
+  font-family: Arial, sans-serif;
+  width: 50%;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+/* Styles for the invoice header */
+.invoice-header {
+  text-align: center;
+}
+
+.invoice-header h2 {
+  font-size: 44px;
+  margin-bottom: 50px;
+}
+
+/* Styles for invoice details */
+.invoice-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.invoice-info {
+  flex: 1;
+}
+
+.invoice-info p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.invoice-recipient {
+  flex: 1;
+}
+
+.invoice-recipient h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.invoice-recipient p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+/* Styles for invoice items table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+/* Styles for the total amount */
+.invoice-total {
+  text-align: right;
+  font-weight: bold;
+}
+
+/* hr{
+  margin: 20px 0;
+} */
+
+/* Styles for the "Proceed" button */
+.Pay {
+  position: relative;
+  right: 100px;
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #0d8600;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.Pay:hover {
+  background-color: #009b1c;
+}
+
+/* Add styles for the invoice header */
+.invoice-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.company-logo {
+  width: 100px; /* Adjust the width as needed */
+  height: auto;
+  margin-right: 20px; /* Add spacing between the logo and company info */
+}
+
+.company-info {
+  flex: 1; /* Expand to fill available space */
+}
+
+.company-info h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.company-info p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+/* Add styles for the customer name and address */
+.invoice-recipient {
+  margin-top: 20px;
+}
+
+.invoice-recipient div {
+  margin-bottom: 10px;
+}
+
+.invoice-recipient p {
+  font-size: 16px;
+  margin: 0;
+  cursor: pointer; /* Add pointer cursor to indicate interactivity */
+}
+
+.invoice-recipient input {
+  font-size: 16px;
+  padding: 5px;
+  width: 90%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+/* PaymentsPage.css */
+
+/* Page layout container */
+.page-layout {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* Invoice container */
+.invoice {
+  flex: 1; /* Take up available space on the left */
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* recent-invoices section container */
+.recent-invoices {
+  flex: 1;
+  /*Takeupavailablespaceontheright*/border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+/* recent-invoices section header */
+.recent-invoices h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* recent-invoices section content (customize this section as needed) */
+/* Example styles for recent-invoices buttons */
+.recent-invoices-button {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.recent-invoices-button:hover {
+  background-color: #0056b3;
+}
+
+/* Example styles for input fields */
+.recent-invoices-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+/* Define a card style for the recent invoices */
+.invoice-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for the recent invoices section */
+.recent-invoices {
+  margin-top: 20px;
+}
+
+/* Style for the individual invoice items inside the card */
+.invoice-item {
+  margin-bottom: 10px;
+}
+
+/* Style for invoice number and date */
+.invoice-number {
+  font-weight: bold;
+}
+
+/* Style for the customer name */
+.customer-name {
+  font-style: italic;
+}
+
+/* Style for the total amount */
+.total-amount {
+  font-weight: bold;
+  color: #ff6600; /* Orange color, you can adjust as needed */
+}
+
+
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  /* Adjust layout for smaller screens if necessary */
+  .page-layout {
+    flex-direction: column;
+  }
+  .invoice,
+  .recent-invoices {
+    flex: unset;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .invoice{
+    position: relative;
+    right: 20px;
+  }
+}
