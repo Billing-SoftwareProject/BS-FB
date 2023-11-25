@@ -95,17 +95,35 @@ const AddItemsPage = () => {
       setCart(updatedCart);
     }
   };
-  const removeFromCart = (item) => {
-    const itemIndex = cart.findIndex((cartItem) => cartItem.id === item.id);
 
+
+// *************************************************************
+// change:
+
+  
+const removeFromCart = (item) => {
+    const itemIndex = cart.findIndex((cartItem) => cartItem.id === item.id);
+  
     if (itemIndex === -1) {
       setCart([...cart, { ...item, quantity: -1 }]);
     } else {
       const updatedCart = [...cart];
-      updatedCart[itemIndex].quantity -= 1;
-      setCart(updatedCart);
+      
+      // Validate that quantity doesn't go below zero
+      if (updatedCart[itemIndex].quantity > 0) {
+        updatedCart[itemIndex].quantity -= 1;
+        setCart(updatedCart);
+      } else {
+        // Optional: You might want to remove the item from the cart if the quantity is already zero
+        // setCart(updatedCart.filter((cartItem) => cartItem.quantity > 0));
+        console.warn("Item quantity is already zero. Cannot decrement further.");
+      }
     }
   };
+
+
+  // ***********************************************************
+  
 
   const totalItemsInCart = cart.reduce(
     (total, item) => total + item.quantity,
