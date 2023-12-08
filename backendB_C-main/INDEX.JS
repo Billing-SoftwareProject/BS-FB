@@ -1,20 +1,19 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 3000;
 require('dotenv').config();
-const cors = require('cors');
-app.use(cors());
+
 
 // Middleware
 app.use(express.json());
 
 // Routes
-const authRoutes = require('./actions/authRoutes');
-const signupRoutes = require('./actions/signupRoutes');
-const dbRoutes = require('./actions/queries');
+const authRoutes = require('./Controllers/authRoutes');
+const Invoices = require('./Controllers/Invoices');
+const dbRoutes = require('./Controllers/queries');
 
 app.use('/api/auth', authRoutes);
-app.use('/api/auth', signupRoutes);
+app.use('/api/Bill', Invoices);
 app.use('/api', dbRoutes);
 
 app.listen(port, () => {
