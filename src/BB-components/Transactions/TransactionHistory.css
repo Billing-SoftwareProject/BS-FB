@@ -1,0 +1,69 @@
+/* TransactionHistory.css */
+.transaction-history-page {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .filter-month {
+    margin-bottom: 20px;
+  }
+  
+  .filter-month label {
+    font-size: 16px;
+    margin-right: 10px;
+    color: #333;
+  }
+  
+  .filter-month select {
+    width: 150px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .show-details label {
+    font-size: 16px;
+    margin-left: 20px;
+    color: #333;
+  }
+  
+  .transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .transaction-table th,
+  .transaction-table td {
+    border: 1px solid #000; /* Replaced blue with black */
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .transaction-table th {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .transaction-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .transaction-table th:nth-child(4),
+  .transaction-table td:nth-child(4) {
+    text-align: right;
+  }
+  
+  /* Add more styles as needed */
+  

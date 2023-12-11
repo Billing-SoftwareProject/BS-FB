@@ -1,0 +1,81 @@
+/* styles.css */
+
+/* Style for the entire landing page container */
+.landing-page {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+  }
+  
+  /* Style for the heading */
+  .landing-page h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the paragraph */
+  .landing-page p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the dropdown select */
+  .landing-page select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Style for the "Proceed" button */
+  .landing-page button {
+    padding: 10px 20px;
+    background-color: #535353;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+
+  .landing-page button:hover{
+    background-color: #000000;
+  }
+
+  /* Disable the "Proceed" button when it's not valid */
+  .landing-page button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  /* Update styles.css */
+
+/* Existing styles... */
+
+/* Style for the detected location box */
+.current-location-box {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style for the detected location box heading */
+  .current-location-box p:first-child {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Style for the detected location text */
+  .current-location-box p:last-child {
+    font-size: 16px;
+  }
+  
+  

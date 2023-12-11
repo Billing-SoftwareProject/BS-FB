@@ -1,0 +1,85 @@
+nav {
+  background: #FF8551;
+  color: #fff;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100; /* Set z-index to ensure the navbar appears on top of other elements */
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo h1 {
+  margin: 0;
+}
+
+.navbar-links {
+  display: flex;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.navbar-toggle {
+  cursor: pointer;
+  display: none;
+}
+
+.navbar-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin-bottom: 5px;
+}
+
+.active {
+  display: flex;
+  flex-direction: column;
+}
+
+h5 {
+  text-align: center;
+}
+
+.Login-link {
+  text-align: center;
+  margin-top: 10px;
+  color: #666;
+}
+
+.Login-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.Login-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .active {
+    display: flex;
+  }
+}

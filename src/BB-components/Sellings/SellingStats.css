@@ -1,0 +1,43 @@
+/* SellingStats.css */
+.selling-stats-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .month-selector {
+    margin-bottom: 20px;
+  }
+  
+  #monthSelect {
+    padding: 5px;
+  }
+  
+  .top-selling-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .top-selling-table th,
+  .top-selling-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .top-selling-table th {
+    background-color: #f0f0f0;
+  }
+  
+  /* Add more styling as needed */
+  

@@ -4,30 +4,31 @@ import { useNavigate, Routes, Route } from "react-router-dom";
 import Landing from "./Landing.js";
 
 // BC-components
-import SignupPage from "./BC-components/SignupPage";
+import SignupPage from "../src/BC-components/Authentication/SignupPage.js";
 // import Navbar from "./BC-components/Navbar";
-import ShoppingCartPage from "./BC-components/ShoppingCartPage.js";
-import LoginPage from "./BC-components/LoginPage";
-import PaymentsPage from "./BC-components/PaymentsPage.js";
-import Pay from "./BC-components/Pay.js";
-import SearchPage from "./BC-components/SearchPage";
-import AddItemsPage from "./BC-components/AddItemsPage";
-import CreateBillPage from "./BC-components/CreateBillPage";
+import ShoppingCartPage from "../src/BC-components/Other/ShoppingCartPage.js";
+import LoginPage from "../src/BC-components/Authentication/LoginPage.js";
+import PaymentsPage from "../src/BC-components/Payments/PaymentsPage.js";
+import Pay from "../src/BC-components/Payments/Pay.js";
+import SearchPage from "./BC-components/Bars/SearchPage.js";
+import AddItemsPage from "./BC-components/Product/AddItemsPage.js";
+import CreateBillPage from "./BC-components/Payments/CreateBillPage.js";
 import Code from "./Code";
+import Revenue from "./BC-components/SellAnalysis/Revenue.js";
 
 // BB-components
-import LandingPage from "./BB-components/LandingPage.js";
-import Home from "./BB-components/Home.js";
-import AddExtra from "./BB-components/AddExtra";
-import Inventory from "./BB-components/Inventory.js";
+import LandingPage from "./BB-components/Home/LandingPage.js";
+import Home from "./BB-components/Home/Home.js";
+import AddExtra from "./BB-components/Inventory/AddExtra";
+import Inventory from "./BB-components/Inventory/Inventory.js";
 // import Navbar from "./BB-components/Navbar.js";
-import Selling from "./BB-components/Selling.js";
-import SellingStats from "./BB-components/SellingStats.js";
-import TransactionDetails from "./BB-components/TransactionDetails.js";
-import TransactionHistory from "./BB-components/TransactionHistory.js";
-import Subscription from "./BB-components/Subscription";
-import Payments from "./BB-components/Payment1";
-import SearchBar from "./BB-components/SearchBar.js";
+import Selling from "./BB-components/Sellings/Selling.js";
+import SellingStats from "./BB-components/Sellings/SellingStats.js";
+import TransactionDetails from "./BB-components/Transactions/TransactionDetails.js";
+import TransactionHistory from "./BB-components/Transactions/TransactionHistory.js";
+import Subscription from "./BB-components/Renew/Subscription.js";
+import Payments from "./BB-components/Payments/Payment1.js";
+import SearchBar from "./BB-components/Bars/SearchBar.js";
 
 const App = () => {
   const navigate = useNavigate();
@@ -74,6 +75,7 @@ const App = () => {
         <Route path="/search" element={<SearchPage />} />
         <Route path="/code" element={<Code />} />
         <Route path="/Pay" element={<Pay />} />
+        <Route path="/Revenue" element={<Revenue />} />
 
         {/* BB-routings */}
         <Route path="/LandingPage" element={<LandingPage />} />
