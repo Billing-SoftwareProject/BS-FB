@@ -1,0 +1,308 @@
+General Styles
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .landing-page {
+    padding: 20px;
+  }
+  
+  /* Header Styles */
+  header {
+    text-align: center;
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+  
+  header p {
+    font-size: 1.2rem;
+  }
+  
+  /* Visuals and Explanation Styles */
+  .visuals-section {
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190625/ourmid/pngtree-blue-mobile-phone-scan-code-payment-technology-banner-background-image_260854.jpg");
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  
+  .software-screenshot,
+  .explanation {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .software-screenshot img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .explanation h2 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .explanation ul {
+    list-style: disc;
+    padding-left: 20px;
+  }
+  
+  /* Testimonials Styles */
+  .testimonials-section {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .testimonial {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  /* CTA Button Styles */
+  .cta-button {
+    display: inline-block;
+    background-color: #4f4f4f;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .cta-button:hover {
+    background-color: #000000;
+  }
+  
+  /* Video Section Styles */
+  .video-section {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .video-container {
+    /* Style your video container as needed */
+  }
+  
+  /* Add styles for other sections as required */
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 768px) {
+    .visuals-section {
+      flex-direction: column;
+    }
+  
+    .software-screenshot,
+    .explanation {
+      flex: 1;
+    }
+  }
+
+  /* plans css */
+
+  .pricing-cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .pricing-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    flex: 1;
+    max-width: 300px;
+    height: 250px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .pricing-card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .pricing-card .price {
+    font-size: 1.2rem;
+    color: #000000;
+    margin: 10px 0;
+  }
+  
+  .key-features {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+  
+  .key-features li {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+  
+  .pricing-card .cta-button {
+    display: inline-block;
+    background-color: #303030;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .pricing-card .cta-button:hover {
+    background-color: #000000;
+  }
+
+  /* FAQ */
+  .faq-section {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+  }
+  
+  .faq-container {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faq-list {
+    margin-top: 20px;
+  }
+  
+  .faq-item {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+  }
+  
+  .faq-item h3 {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .faq-item p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+/* Trusted Brands Section Styles */
+.trusted-brands-section {
+    background-color: #fff;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .trusted-brands-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .trusted-points ul {
+    text-align: left;
+    padding-left: 20px;
+  }
+  
+  .trusted-points ul li {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .brand-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .brand-card {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    max-width: 350px;
+  }
+  
+  .brand-card img {
+    max-width: 200px;
+  }
+
+  /* Seamless on Any Device Section Styles */
+.seamless-device-section {
+    background-color: #f9f9f9;
+    padding: 40px 0;
+  }
+  
+  .seamless-device-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .seamless-device-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .device-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .device-card {
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 60px;
+    max-width: 300px;
+  }
+  
+  .device-card img {
+    max-width: 250px;
+  }
+
+  
+  /* Additional Media Queries for Smaller Screens or Adjustments */
+  @media (max-width: 480px) {
+    .visuals-section {
+      text-align: center;
+    }
+  
+    .software-screenshot,
+    .explanation {
+      flex: auto;
+    }
+  
+    .cta-button {
+      display: block;
+      width: 100%;
+    }
+  
+  }
+  
