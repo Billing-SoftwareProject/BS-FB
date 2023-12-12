@@ -18,7 +18,7 @@ const PaymentPage = () => {
 
   const navigate = useNavigate();
   const handleBack = () => {
-    navigate("/Additems");
+    navigate("/Succeed");
   };
 
   const [showUPIOptions, setShowUPIOptions] = useState(false);
