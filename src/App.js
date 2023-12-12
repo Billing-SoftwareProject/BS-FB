@@ -79,6 +79,9 @@ const App = () => {
         <Route path="/Pay" element={<Pay />} />
         <Route path="/Revenue" element={<Revenue />} />
 
+        <Route path="/Welcome" element={<Welcome />} />
+        <Route path="/Succeed" element={<Succeed />} />
+
         {/* BB-routings */}
         <Route path="/LandingPage" element={<LandingPage />} />
         <Route exact path="/Home" element={<Home />} />
