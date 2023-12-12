@@ -23,12 +23,12 @@ const PaymentsPage = () => {
       });
   };
 
-
   const [serialNumber, setSerialNumber] = useState(1);
 
   // State variables to track customer name, invoice number, address, and serial number
   const [GST, setGST] = useState("");
   const [customerName, setCustomerName] = useState("");
+  const [ProductName, setProductName] = useState("");
   const [address, setAddress] = useState("");
   const [invoiceNumber, setInvoiceNumber] = useState(generateInvoiceNumber());
 
@@ -63,13 +63,13 @@ const PaymentsPage = () => {
     const newInvoiceNumber = generateInvoiceNumber();
     const invoiceAmountToPass = totalIncludingGSTSGST || 0;
     // navigate("/pay", {
-      navigate("/Additems", {
+    navigate("/pay", {
       state: {
         invoiceNumber: newInvoiceNumber,
         invoiceDate: formatDate(new Date()),
         customerName: customerName,
         address: address,
-        invoiceAmount: invoiceAmountToPass
+        invoiceAmount: invoiceAmountToPass,
       },
     });
   };
@@ -114,8 +114,8 @@ const PaymentsPage = () => {
 
   // Calculate the GST and SGST charges for each item
   const itemsWithGST = location.state.map((item) => {
-    const gstCharge = calculateGST(item.price, item.Quantity, gstRate);
-    const sgstCharge = calculateSGST(item.price, item.Quantity, sgstRate);
+    const gstCharge = calculateGST(item.price, item.quantity, gstRate);
+    const sgstCharge = calculateSGST(item.price, item.quantity, sgstRate);
 
     return {
       ...item,
@@ -125,7 +125,7 @@ const PaymentsPage = () => {
   });
 
   // Calculate the total including GST and SGST charges
-  
+
   const gstTotal = itemsWithGST.reduce(
     (total, item) => total + item.gstCharge,
     0
@@ -139,7 +139,6 @@ const PaymentsPage = () => {
     (total, item) => total + item.price * item.quantity + gstTotal + sgstTotal,
     0
   );
-
 
   // State variable to store added invoices
   const [recentInvoices, setRecentInvoices] = useState([]);
@@ -175,7 +174,14 @@ const PaymentsPage = () => {
       invoiceNumber: invoiceNumber,
       invoiceDate: formatDate(new Date()),
       customerName: customerName,
+      address: address,
       total: totalIncludingGSTSGST.toFixed(2),
+      products: itemsWithGST.map((item) => ({
+        ProductName: item.ProductName,
+        quantity: item.quantity,
+        price: item.price,
+        total: (item.price * item.quantity).toFixed(2),
+      })),
     };
 
     // Add the new invoice to the list of recent invoices
@@ -216,23 +222,24 @@ const PaymentsPage = () => {
             <div className="invoice-info">
               <p>Invoice Number: {invoiceNumber}</p>
               <p>Invoice Date: {formatDate(new Date())}</p>
-              <p className="invoice-recipient">{isGSTVisible ? (
-                <div>
-                  <p>GST No:</p>
-                  <input
-                    type="String"
-                    placeholder="Cust GST No.."
-                    value={GST}
-                    onChange={(e) => setGST(e.target.value)}
-                    onBlur={handleGST}
-                  />
-                </div>
-              ) : (
-                <p onClick={handleGSTClick}>
-                  Billed To:{" "}
-                  {customerName || "Click here to enter customer name"}
-                </p>
-              )}
+              <p className="invoice-recipient">
+                {isGSTVisible ? (
+                  <div>
+                    <p>GST No:</p>
+                    <input
+                      type="String"
+                      placeholder="Cust GST No.."
+                      value={GST}
+                      onChange={(e) => setGST(e.target.value)}
+                      onBlur={handleGST}
+                    />
+                  </div>
+                ) : (
+                  <p onClick={handleGSTClick}>
+                    Billed To:{" "}
+                    {customerName || "Click here to enter customer name"}
+                  </p>
+                )}
               </p>
             </div>
             <div className="invoice-recipient">
@@ -282,14 +289,20 @@ const PaymentsPage = () => {
                 </tr>
               </thead>
               <tbody>
-                {itemsWithGST.map((item) => (
-                  <tr key={item.id}>
-                    <td>{item.ProductName}</td>
-                    <td>{item.quantity}</td>
-                    <td>₹{item.price}</td>
-                    <td>₹{(item.price * item.quantity).toFixed(2)}</td>
+                {itemsWithGST.length > 0 ? (
+                  itemsWithGST.map((item) => (
+                    <tr key={item.id}>
+                      <td>{item.ProductName}</td>
+                      <td>{item.quantity}</td>
+                      <td>₹{item.price}</td>
+                      <td>₹{(item.price * item.quantity).toFixed(2)}</td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="4">No items to display</td>
                   </tr>
-                ))}
+                )}
                 <tr className="gst-sgst-row">
                   <td colSpan="3">GST ({gstRate}%)</td>
                   <td>₹{gstTotal.toFixed(2)}</td>
@@ -331,13 +344,23 @@ const PaymentsPage = () => {
             >
               <div className="invoice-item">
                 <p className="invoice-number">
-                  Invoice #{invoice.invoiceNumber}
+                  InvoiceNo: #{invoice.invoiceNumber}
                 </p>
                 <p className="invoice-date">Date: {invoice.invoiceDate}</p>
               </div>
               <div className="invoice-item">
                 <p className="customer-name">
                   Customer: {invoice.customerName}
+                </p>
+              </div>
+              <div className="invoice-item">
+                <p className="customer-name">
+                  Products:{" "}
+                  {invoice.products.map((product, idx) => (
+                    <span key={idx}>
+                      {product.ProductName} ({product.quantity}),{" "}
+                    </span>
+                  ))}
                 </p>
               </div>
               <div className="invoice-item">
@@ -368,9 +391,9 @@ const PaymentsPage = () => {
       <button className="Pay" onClick={addInvoiceToRecent}>
         Add
       </button>
-      <hr/>
+      <hr />
       <section className="QuickAdd">
-        <QuickAddPage/>
+        <QuickAddPage />
       </section>
     </>
   );
