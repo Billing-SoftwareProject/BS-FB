@@ -14,7 +14,7 @@ const LoginPage = () => {
     e.preventDefault();
     // Login logic...
     console.log("Logged in successfully!");
-    navigate('/Additems');
+    navigate('/Welcome');
   };
 
   const handleAdmin = () => {
