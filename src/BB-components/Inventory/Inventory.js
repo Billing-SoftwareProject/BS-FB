@@ -28,31 +28,31 @@ const Inventory = () => {
     }
   };
 
-  const handleOpenCamera = async () => {
-    try {
-      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-      setCameraAccess(true);
+  // const handleOpenCamera = async () => {
+  //   try {
+  //     const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+  //     setCameraAccess(true);
 
-      const videoElement = document.createElement("video");
-      videoElement.srcObject = stream;
-      videoElement.play();
+  //     const videoElement = document.createElement("video");
+  //     videoElement.srcObject = stream;
+  //     videoElement.play();
 
-      const canvasElement = document.createElement("canvas");
-      canvasElement.width = 640;
-      canvasElement.height = 480;
+  //     const canvasElement = document.createElement("canvas");
+  //     canvasElement.width = 640;
+  //     canvasElement.height = 480;
 
-      videoElement.addEventListener("loadedmetadata", () => {
-        canvasElement.getContext("2d").drawImage(videoElement, 0, 0, 640, 480);
-        const capturedImage = canvasElement.toDataURL("image/jpeg");
+  //     videoElement.addEventListener("loadedmetadata", () => {
+  //       canvasElement.getContext("2d").drawImage(videoElement, 0, 0, 640, 480);
+  //       const capturedImage = canvasElement.toDataURL("image/jpeg");
 
-        setNewItem({ ...newItem, image: capturedImage });
-        stream.getTracks().forEach((track) => track.stop());
-      });
-    } catch (error) {
-      console.error("Error accessing camera:", error);
-      alert("Unable to access the camera. Please check your permissions.");
-    }
-  };
+  //       setNewItem({ ...newItem, image: capturedImage });
+  //       stream.getTracks().forEach((track) => track.stop());
+  //     });
+  //   } catch (error) {
+  //     console.error("Error accessing camera:", error);
+  //     alert("Unable to access the camera. Please check your permissions.");
+  //   }
+  // };
 
   const handleAddNewItem = () => {
     if (validateNewItem(newItem)) {
@@ -81,12 +81,12 @@ const Inventory = () => {
   const validateNewItem = (item) => {
     return (
       item.name &&
-      item.description &&
+      // item.description &&
       item.quantity &&
       item.unit &&
-      item.image &&
-      item.price &&
-      item.type
+      // item.image &&
+      item.price
+      // item.type
     );
   };
 
@@ -106,14 +106,14 @@ const Inventory = () => {
                 onChange={handleNewItemChange}
                 required
               />
-              <input
+              {/* <input
                 type="text"
                 name="description"
                 placeholder="Item Description"
                 value={newItem.description}
                 onChange={handleNewItemChange}
                 required
-              />
+              /> */}
               <input
                 type="number"
                 name="quantity"
@@ -126,7 +126,7 @@ const Inventory = () => {
                 name="unit"
                 value={newItem.unit}
                 onChange={handleNewItemChange}
-                required
+                // required
               >
                 <option value="">Select Unit</option>
                 <option value="litre">Litre</option>
@@ -135,7 +135,7 @@ const Inventory = () => {
                 <option value="packets">Packets</option>
                 {/* Add more options as needed */}
               </select>
-              <div className="image-input">
+              {/* <div className="image-input">
                 <label htmlFor="image">Add Image:</label>
                 <input
                   type="file"
@@ -160,14 +160,14 @@ const Inventory = () => {
                 >
                   Open Camera
                 </button>
-              </div>
-              {newItem.image && (
+              </div> */}
+              {/* {newItem.image && (
                 <img
                   src={newItem.image}
                   alt="Item Preview"
                   className="image-preview"
                 />
-              )}
+              )} */}
               <input
                 type="number"
                 name="price"
@@ -176,14 +176,14 @@ const Inventory = () => {
                 onChange={handleNewItemChange}
                 required
               />
-              <input
+              {/* <input
                 type="text"
                 name="type"
                 placeholder="Item Type"
                 value={newItem.type}
                 onChange={handleNewItemChange}
                 required
-              />
+              /> */}
               <button
                 type="button"
                 onClick={handleAddNewItem}
@@ -197,15 +197,15 @@ const Inventory = () => {
           <div className="inventory-items">
             {inventory.map((item, index) => (
               <div className="inventory-card" key={index}>
-                <img src={item.image} alt={item.name} />
+                {/* <img src={item.image} alt={item.name} /> */}
                 <div className="item-details">
                   <h3>{item.name}</h3>
-                  <p>{item.description}</p>
+                  {/* <p>{item.description}</p> */}
                   <p>
                     Quantity: {item.quantity} {item.unit}
                   </p>
-                  <p>Price: ${item.price}</p>
-                  <p>Type: {item.type}</p>
+                  <p>Price: ₹{item.price}</p>
+                  {/* <p>Type: {item.type}</p> */}
                 </div>
               </div>
             ))}
