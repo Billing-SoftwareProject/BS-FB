@@ -15,6 +15,8 @@ import AddItemsPage from "./BC-components/Product/AddItemsPage.js";
 import CreateBillPage from "./BC-components/Payments/CreateBillPage.js";
 import Code from "./Code";
 import Revenue from "./BC-components/SellAnalysis/Revenue.js";
+import Welcome from "./BC-components/Other/WelcomePage.js";
+import Succeed from "./BC-components/Other/Succeed.js";
 
 // BB-components
 import LandingPage from "./BB-components/Home/LandingPage.js";
